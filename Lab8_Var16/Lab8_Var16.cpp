@@ -7,6 +7,24 @@ using namespace std;
 typedef int matrix[100][100];
 int n;
 
+void input(matrix);
+void output(matrix);
+int minElem(matrix, int, int);
+void genMatr(matrix, matrix);
+
+int main()
+{
+    cout << "Input n:\n";
+    cin >> n;
+    matrix a, b;
+    input(a);
+    cout << "Matrix A:\n";
+    output(a);
+    genMatr(a, b);
+    cout << "Matrix B:\n";
+    output(b);
+}
+
 void input(matrix a)
 {
     srand(time(NULL));
@@ -48,17 +66,4 @@ void genMatr(matrix a, matrix b)
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
             b[i][j] = minElem(a, i, j);
-}
-
-int main()
-{
-    cout << "Input n:\n";
-    cin >> n;
-    matrix a, b;
-    input(a);
-    cout << "Matrix A:\n";
-    output(a);
-    genMatr(a, b);
-    cout << "Matrix B:\n";
-    output(b);
 }
